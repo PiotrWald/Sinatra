@@ -1,0 +1,14 @@
+%h1 Hangman the Game
+.message= @@message
+.hidden_word
+- for i_idx in 0..@@my_word_display.size-1
+	.letter-container= @@my_word_display[i_idx]
+.keyboard
+	%form
+		%input{ :type => "text", :name => "guess"}
+		%input{ :type => "submit", :value => "submit"}
+.hangman
+%p= @@counter
+%form
+	%input{ :type => "submit", :name => "reset", :value => "reset"}
+%a{:href => "http://localhost:4567"} back

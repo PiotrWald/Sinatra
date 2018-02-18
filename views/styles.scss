@@ -1,0 +1,33 @@
+$red: #903;
+$black: #444;
+$white: #fff;
+$main-font: Helvetica, Arial, sans-serif;
+
+h1 {
+	color: $red;
+	font-family: $main-font;
+}
+
+p {
+	color: $black;
+	font-family: $main-font;
+	font-size: 1.2rem;
+}
+
+.input {
+}
+
+.button {
+	color: $red;
+}
+
+.output {
+	color: $red;
+	width: 30rem;
+	border: solid $black 1px;
+	margin-top: 2rem;
+	margin-left: 2rem;
+	text-align: center;
+	break-word: break-word;
+	height: auto;
+}
