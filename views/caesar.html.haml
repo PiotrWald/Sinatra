@@ -2,9 +2,10 @@
 %p Get the respect you deserve by encrypting your messages with Caesar Cipher!
 %form
 	%input.input{:type => "text", :name => "to_cipher", :placeholder => "Enter text to encrypt"}
-	%input.button{:type => "submit", :value => "submit"}
 	%br
-	%input.button{:type => "text", :name => "shift_value", :placeholder => "shift value"}
+	%input.input{:type => "text", :name => "shift_value", :placeholder => "shift value"}
+	%input.button{:type => "submit", :value => "submit"}
 .output
 	%strong= @@ciphered
-%a{:href => "https://mighty-wave-72383.herokuapp.com/"} back
+.back
+	%a{:href => "https://mighty-wave-72383.herokuapp.com/"} back

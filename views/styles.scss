@@ -1,33 +1,88 @@
 $red: #903;
 $black: #444;
 $white: #fff;
+$green: #0fb3ff;
 $main-font: Helvetica, Arial, sans-serif;
 
 h1 {
 	color: $red;
 	font-family: $main-font;
+	text-align: center;
+	margin-top: 5%;
+}
+
+a {
+	font-family: $main-font;
+	text-decoration: none;
+	font-size: 1.2rem;
+	color: $red
+}
+
+.center {
+	margin: 0 auto;
+	width: 130px;
+	height: 100px;
 }
 
 p {
 	color: $black;
 	font-family: $main-font;
 	font-size: 1.2rem;
+	text-align: center;
 }
 
 .input {
+	display: block;
+	margin: 0 auto;
 }
 
 .button {
 	color: $red;
+	margin: 2% auto;
+	display: block;
 }
 
 .output {
-	color: $red;
+	color: $green;
 	width: 30rem;
-	border: solid $black 1px;
-	margin-top: 2rem;
-	margin-left: 2rem;
+	margin: auto;
 	text-align: center;
 	break-word: break-word;
 	height: auto;
+
+}
+
+.hidden-word {
+	display: flex;
+	justify-content: center;
+}
+
+.letter-container {
+	text-align: center;
+	width: 2rem;
+	height: 2rem;
+}
+
+.keyboard {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 20%;
+	margin: 0 auto;
+}
+
+.back {
+	width: 2rem;
+	margin: 5% auto;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.message {
+	text-align: center;
+	margin: 2% 0;
+	font-size: 1.2rem;
+	font-family: $main-font;
 }

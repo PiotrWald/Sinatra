@@ -4,7 +4,8 @@ require 'sass'
 require 'set'
 get('/styles.css'){scss :styles}
 
-#Caesar Cipher
+#Caesar class used to encode a string
+
 @@ciphered = ""
 class Caesar
 	def encode_string(my_string, shift_value)
@@ -30,7 +31,8 @@ end
 x = Caesar.new
 
 
-# hangman
+#Initializers for Hangman
+
 words = ["obstruction", "manipulation", "indentation", "vibrant",
 "redemtion", "hapiness", "smallpox", "strawberry"]
 messages_failure = ["not like this", "try again", "you are doing it wrong"]
@@ -42,10 +44,11 @@ guessed_letters = Set.new
 
 
 
-#Check wheter the guessed letter has not been found yet
 get '/' do 
 	haml "index.html".to_sym, :layout => "layout.html".to_sym
 end
+
+## Caesar ##
 
 get '/caesar' do
 	to_cipher = params['to_cipher']
@@ -57,6 +60,8 @@ get '/caesar' do
 	haml "caesar.html".to_sym, :layout => "layout.html".to_sym
 end
 
+## Hangman ##
+
 get '/hangman' do
 
 	if params['reset'] == "reset"
@@ -66,7 +71,7 @@ get '/hangman' do
 		@message = "guess the word!"
 	end
 
-
+#Check if the letter has allready been used
 	success = false
 	@@my_word_display = ""
 	guess = params['guess']
@@ -88,7 +93,7 @@ get '/hangman' do
 	end
 
 
-#Creation of word with missing spaces for player to see
+#Creation of a word with missing spaces for player to see
 
 	for i_idx in 0..my_word.size-1
 		if guessed_letters.include?(my_word[i_idx])
@@ -102,9 +107,6 @@ get '/hangman' do
 		@@message = "You are hanged!"
 		@@my_word_display = my_word
 	end
-
-#App feedback features
-
 
 	@@current_stage_image = @@counter.to_s + ".jpg"
 

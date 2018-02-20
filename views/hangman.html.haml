@@ -1,14 +1,15 @@
 %h1 Hangman the Game
 .message= @@message
-.hidden_word
-- for i_idx in 0..@@my_word_display.size-1
-	.letter-container= @@my_word_display[i_idx]
+.hidden-word
+	-for i_idx in 0..@@my_word_display.size-1
+		.letter-container= @@my_word_display[i_idx]
 .keyboard
-	%form
-		%input{ :type => "text", :name => "guess"}
-		%input{ :type => "submit", :value => "submit"}
+	-for i_idx in 97..122
+		%form
+			%input{ :type => "submit", :value => i_idx.chr , :name => "guess"}
 .hangman
-%p= @@counter
+%p= "You have #{9 - @@counter} chances left!"
 %form
-	%input{ :type => "submit", :name => "reset", :value => "reset"}
-%a{:href => "https://mighty-wave-72383.herokuapp.com/"} back
+	%input.button{ :type => "submit", :name => "reset", :value => "reset"}
+.back
+	%a{:href => "https://mighty-wave-72383.herokuapp.com/"}back
